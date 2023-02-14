@@ -33,7 +33,7 @@ func main() {
 	}
 
 	app.TempsCache = tempsCache
-	app.UseCache = false
+	app.UseCache = true
 
 	repo := handlers.NewRepo(&app)
 	handlers.NewHandlers(repo)
@@ -41,7 +41,7 @@ func main() {
 	render.NewTemplates(&app)
 
 	server := &http.Server{
-		Addr: PORTNUMBER,
+		Addr:    PORTNUMBER,
 		Handler: routes(&app),
 	}
 

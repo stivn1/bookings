@@ -1,5 +1,6 @@
 package models
 
+// TemplatesData estructura que contiene todos los datos que van a ser enviados de los controladores a las plantillas
 type TemplatesData struct {
 	StringMap map[string]string
 	IntMap    map[string]int

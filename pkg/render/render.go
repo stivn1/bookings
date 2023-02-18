@@ -52,7 +52,7 @@ func RenderTemplate(w http.ResponseWriter, tempName string, data *models.Templat
 
 	_, err = buff.WriteTo(w)
 	if err != nil {
-		log.Println(err)
+		log.Println("error al escribir la plantilla en el navegador", err)
 	}
 }
 

@@ -40,13 +40,13 @@ func main() {
 
 	render.NewTemplates(&app)
 
-	server := &http.Server{
+	srv := &http.Server{
 		Addr:    PORTNUMBER,
 		Handler: routes(&app),
 	}
 
-	err = server.ListenAndServe()
+	err = srv.ListenAndServe()
 	if err != nil {
-		log.Fatal("no se pudo cargar el servidor")
+		log.Fatal("no se pudo cargar el servidor", err)
 	}
 }

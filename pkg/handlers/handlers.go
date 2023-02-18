@@ -11,7 +11,7 @@ import (
 // Repo es el repositorio usado por los controladores
 var Repo *Repository
 
-// Repository estructura que contiene una dato de tipo AppConfig con toda la configuracion de la aplicacion
+// Repository estructura que contiene un tipo AppConfig con toda la configuracion de la aplicacion
 type Repository struct {
 	App *config.AppConfig
 }
@@ -28,6 +28,7 @@ func NewHandlers(r *Repository) {
 	Repo = r
 }
 
+// Home es el handler de la pagina principal home
 func (m *Repository) Home(w http.ResponseWriter, r *http.Request) {
 	render.RenderTemplate(w, "home_page.gohtml", &models.TemplatesData{})
 }
